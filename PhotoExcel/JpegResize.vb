@@ -88,6 +88,7 @@ Public Class ClassJpegResize
             If mBackup = BackupStyle.Overwrite Then
                 mFileInfo.MoveTo(mResizeName)
             End If
+            mResizeName = ""
         End If
 
         Return Ret
@@ -171,6 +172,10 @@ Public Class ClassJpegResize
 
     Public ReadOnly Property GetResizeFile As String
         Get
+            If String.IsNullOrEmpty(mResizeName) Then
+                Return mBackupName
+            End If
+
             Return mResizeName
         End Get
     End Property
