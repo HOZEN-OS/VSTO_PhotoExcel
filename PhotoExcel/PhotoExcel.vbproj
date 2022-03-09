@@ -207,6 +207,7 @@
   <ItemGroup>
     <AppDesigner Include="My Project\" />
     <Compile Include="JpegResize.vb" />
+    <Compile Include="JpegRotate.vb" />
     <Compile Include="Photo.vb" />
     <Compile Include="Ribbon1.designer.vb">
       <DependentUpon>Ribbon1.vb</DependentUpon>

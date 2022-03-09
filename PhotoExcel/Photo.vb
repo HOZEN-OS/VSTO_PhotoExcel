@@ -121,9 +121,9 @@ Module Photo
             If ReSize Then
                 Dim ImgRe As New ClassJpegResize(Size, 90, BackupStyle.NewFile)
                 ImgRe.Resize(fn)
-                FileName = ImgRe.GetResizeFile
+                FileName = JpegRotate.ChangeRotate(ImgRe.GetResizeFile)
             Else
-                FileName = fn
+                FileName = JpegRotate.ChangeRotate(fn)
             End If
 
             With ActiveSheet.Shapes.AddPicture(FileName, False, True, 0, 0, 0, 0)
