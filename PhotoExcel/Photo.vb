@@ -40,6 +40,11 @@ Module Photo
                 If files.Count > 0 Then
                     al.AddRange(files)
                 End If
+
+                Dim files2 As String() = IO.Directory.GetFiles(mFolderName, "*.jpeg", IO.SearchOption.AllDirectories)
+                If files2.Count > 0 Then
+                    al.AddRange(files2)
+                End If
             End If
         End If
 
