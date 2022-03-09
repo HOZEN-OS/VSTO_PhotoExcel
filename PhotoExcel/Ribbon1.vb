@@ -10,7 +10,7 @@ Public Class RibbonPhotoExcel
     End Sub
 
     Private Sub btnAddPhoto_Click(sender As Object, e As RibbonControlEventArgs) Handles btnAddPhoto.Click
-        PhotoAdd()
+        PutPhotos(GetFiles())
     End Sub
 
     Private Sub ChkReSize_Click(sender As Object, e As RibbonControlEventArgs) Handles ChkReSize.Click
@@ -18,7 +18,7 @@ Public Class RibbonPhotoExcel
     End Sub
 
     Private Sub btnAddAllPhoto_Click(sender As Object, e As RibbonControlEventArgs) Handles btnAddAllPhoto.Click
-        PhotoAddAll()
+        PutPhotos(GetFolder())
     End Sub
 
     Private Sub btnAddBlank_Click(sender As Object, e As RibbonControlEventArgs) Handles btnAddBlank.Click

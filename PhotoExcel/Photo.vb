@@ -11,77 +11,47 @@ Module Photo
 
     Private SelectedPath As String = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures)
 
-    Private Function GetFile() As String
+    Public Function GetFiles() As ArrayList
         Dim ofd As New OpenFileDialog With {
             .InitialDirectory = SelectedPath,
             .Filter = "JPEG画像(*.jpg; *.jpeg)|*.jpg; *.jpeg",
-            .Multiselect = False
+            .Multiselect = True
         }
 
-        If ofd.ShowDialog() = DialogResult.Cancel Then
-            Return ""
+        Dim al As New ArrayList
+        If ofd.ShowDialog() <> DialogResult.Cancel Then
+            al.AddRange(ofd.FileNames)
         End If
-        SelectedPath = IO.Path.GetFullPath(ofd.FileName)
 
-        Return ofd.FileName
+        Return al
     End Function
 
-    Public Sub PhotoAdd()
-        If ActiveSheet.Columns("A").ColumnWidth <> COL_WIDTH_A Then
-            PageNew()
-        End If
-
-        If ActiveSheet.Columns("A").ColumnWidth = COL_WIDTH_A Then
-            Dim FileName As String = GetFile()
-            If FileName = "" Then
-                Return
-            End If
-
-            Application.ScreenUpdating = False
-            Dim Row As Integer
-            Dim C As Integer
-
-            GetSelectCell(Row, C)
-            AllPageNum = Int((1 + C) / 3 + 0.9)
-
-            Dim mPage As Integer = Math.Ceiling((1 + C) / 3)
-            For P = PageNum() To mPage - 1
-                SetPageStyle(P)
-            Next
-
-            ActiveSheet.Cells(Row, 1).Select
-            PutPhoto(New ArrayList({FileName}))
-
-            Application.ScreenUpdating = True
-        End If
-    End Sub
-
-    Private Function GetFiles() As ArrayList
+    Public Function GetFolder() As ArrayList
         Dim fbd As New FolderBrowserDialog With {
             .Description = "フォルダを指定してください。",
             .RootFolder = Environment.SpecialFolder.Desktop
         }
 
+        Dim al As New ArrayList
         If fbd.ShowDialog() = DialogResult.OK Then
             Dim mFolderName As String = fbd.SelectedPath
-            If mFolderName <> "" Then
+            If Not String.IsNullOrEmpty(mFolderName) Then
                 Dim files As String() = IO.Directory.GetFiles(mFolderName, "*.jpg", IO.SearchOption.AllDirectories)
                 If files.Count > 0 Then
-                    Return New ArrayList(files)
+                    al.AddRange(files)
                 End If
             End If
         End If
 
-        Return New ArrayList
+        Return al
     End Function
 
-    Public Sub PhotoAddAll()
+    Public Sub PutPhotos(mFileList As ArrayList)
         If ActiveSheet.Columns("A").ColumnWidth <> COL_WIDTH_A Then
             PageNew()
         End If
 
         If ActiveSheet.Columns("A").ColumnWidth = COL_WIDTH_A Then
-            Dim mFileList As ArrayList = GetFiles()
             If mFileList.Count > 0 Then
                 Application.ScreenUpdating = False
                 Dim Row As Integer
