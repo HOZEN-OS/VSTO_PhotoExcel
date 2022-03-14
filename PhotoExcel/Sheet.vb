@@ -1,6 +1,4 @@
-﻿Imports System.Windows.Forms
-
-Module Sheet
+﻿Module Sheet
     Public Const COL_WIDTH_A As Double = 55.63
     Public Const COL_WIDTH_B As Double = 2.78
     Public Const COL_WIDTH_C As Double = 20.0#

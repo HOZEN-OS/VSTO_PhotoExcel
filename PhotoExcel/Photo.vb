@@ -1,19 +1,17 @@
-﻿Imports System.Collections
-Imports System.Windows.Forms
-
-Module Photo
+﻿Module Photo
     Public Const PhotoWidth As Double = 338
     Public Const PhotoHeight As Double = 253.5
+
+    Public ImageResize As New Size With {.Width = 1024, .Height = 768}
+    Public Const ImageQuality As Long = 90
 
     Public ReSize As Boolean = False
     Public Application As Excel.Application = Globals.ThisAddIn.Application
     Public ActiveSheet As Excel.Worksheet = Application.ActiveSheet
 
-    Private SelectedPath As String = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures)
-
     Public Function GetFiles() As ArrayList
         Dim ofd As New OpenFileDialog With {
-            .InitialDirectory = SelectedPath,
+            .InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures),
             .Filter = "JPEG画像(*.jpg; *.jpeg)|*.jpg; *.jpeg",
             .Multiselect = True
         }
@@ -109,24 +107,23 @@ Module Photo
         Dim Row As Integer
         Dim C As Integer
         Dim FileName As String
-        Dim Size As New Drawing.Rectangle With {
-            .Width = 1024,
-            .Height = 768
-        }
-
+        Dim CopyFile As String
+        Dim OriginalFile As FileInfo
         GetSelectCell(Row, C)
-
-        For Each fn As String In fl
+        Dim Img As New JpegImage(ImageResize, ImageQuality)
+        For Each FileName In fl
             C += 1
+
+            OriginalFile = New FileInfo(FileName)
+            CopyFile = OriginalFile.DirectoryName & "\copy_" & OriginalFile.Name
+            OriginalFile.CopyTo(CopyFile, True)
+
+            Img.ChangeRotate(CopyFile)
             If ReSize Then
-                Dim ImgRe As New ClassJpegResize(Size, 90, BackupStyle.NewFile)
-                ImgRe.Resize(fn)
-                FileName = JpegRotate.ChangeRotate(ImgRe.GetResizeFile)
-            Else
-                FileName = JpegRotate.ChangeRotate(fn)
+                Img.ReSize(CopyFile)
             End If
 
-            With ActiveSheet.Shapes.AddPicture(FileName, False, True, 0, 0, 0, 0)
+            With ActiveSheet.Shapes.AddPicture(CopyFile, False, True, 0, 0, 0, 0)
                 .LockAspectRatio = Microsoft.Office.Core.MsoTriState.msoTrue
                 .ScaleHeight(1, Microsoft.Office.Core.MsoTriState.msoTrue)
                 .ScaleWidth(1, Microsoft.Office.Core.MsoTriState.msoTrue)
@@ -146,9 +143,7 @@ Module Photo
                 Row = Row + 1
             End If
 
-            If ReSize Then
-                Kill(FileName)
-            End If
+            Kill(CopyFile)
         Next
     End Sub
 

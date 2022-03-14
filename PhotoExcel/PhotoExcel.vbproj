@@ -186,9 +186,15 @@
   <ItemGroup>
     <Import Include="Microsoft.VisualBasic" />
     <Import Include="System" />
+    <Import Include="System.Collections" />
     <Import Include="System.Collections.Generic" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Drawing.Drawing2D" />
+    <Import Include="System.Drawing.Imaging" />
+    <Import Include="System.IO" />
     <Import Include="System.Linq" />
     <Import Include="System.Text" />
+    <Import Include="System.Windows.Forms" />
     <Import Include="System.Xml.Linq" />
     <Import Include="Office = Microsoft.Office.Core" />
     <Import Include="Excel = Microsoft.Office.Interop.Excel" />
@@ -206,8 +212,7 @@
   -->
   <ItemGroup>
     <AppDesigner Include="My Project\" />
-    <Compile Include="JpegResize.vb" />
-    <Compile Include="JpegRotate.vb" />
+    <Compile Include="JpegImage.vb" />
     <Compile Include="Photo.vb" />
     <Compile Include="Ribbon1.designer.vb">
       <DependentUpon>Ribbon1.vb</DependentUpon>
