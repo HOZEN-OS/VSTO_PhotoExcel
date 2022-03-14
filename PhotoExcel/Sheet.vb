@@ -59,7 +59,7 @@ Module Sheet
 
         Pages = PageNum()
         With ActiveSheet
-            For I As Integer = .Shapes.Count To 1 Step -1
+            For I As Integer = .Shapes.Count - 1 To 0 Step -1
                 If .Shapes(I).Type = Microsoft.Office.Core.MsoShapeType.msoPicture Then
                     If Math.Abs(.Shapes(I).Left) < 10 Then
                         .Shapes(I).Locked = Microsoft.Office.Core.MsoTriState.msoFalse
