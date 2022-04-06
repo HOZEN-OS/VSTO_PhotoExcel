@@ -11,7 +11,7 @@ Imports System.Security
 
 <Assembly: AssemblyTitle("PhotoExcel")> 
 <Assembly: AssemblyDescription("")> 
-<Assembly: AssemblyCompany("")> 
+<Assembly: AssemblyCompany("株式会社ホゼン")> 
 <Assembly: AssemblyProduct("PhotoExcel")> 
 <Assembly: AssemblyCopyright("Copyright ©  2021")> 
 <Assembly: AssemblyTrademark("")> 

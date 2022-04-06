@@ -8,16 +8,18 @@
     Public ReSize As Boolean = False
     Public Application As Excel.Application = Globals.ThisAddIn.Application
     Public ActiveSheet As Excel.Worksheet = Application.ActiveSheet
+    Private OpenDirectory As String = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures)
 
     Public Function GetFiles() As ArrayList
         Dim ofd As New OpenFileDialog With {
-            .InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures),
+            .InitialDirectory = OpenDirectory,
             .Filter = "JPEG画像(*.jpg; *.jpeg)|*.jpg; *.jpeg",
             .Multiselect = True
         }
 
         Dim al As New ArrayList
         If ofd.ShowDialog() <> DialogResult.Cancel Then
+        	OpenDirectory = Path.GetDirectoryName(ofd.FileNames(0))
             al.AddRange(ofd.FileNames)
         End If
 
