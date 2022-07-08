@@ -46,4 +46,17 @@ Public Class RibbonPhotoExcel
             LbVersion.Label = .Major & "." & .Minor & "." & .Build & "." & .Revision
         End With
     End Sub
+
+
+    Private Sub Button1_Click(sender As Object, e As RibbonControlEventArgs) Handles Button1.Click
+        PicAddDate()
+    End Sub
+
+    Private Sub ChkDate_Click(sender As Object, e As RibbonControlEventArgs) Handles ChkDate.Click
+        AddDate = ChkDate.Checked
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As RibbonControlEventArgs) Handles Button2.Click
+        PicDelDate()
+    End Sub
 End Class

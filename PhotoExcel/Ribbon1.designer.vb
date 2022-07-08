@@ -43,27 +43,32 @@
     Private Sub InitializeComponent()
         Me.Tab1 = Me.Factory.CreateRibbonTab
         Me.Group1 = Me.Factory.CreateRibbonGroup
-        Me.BtnAddNew = Me.Factory.CreateRibbonButton
-        Me.BtnAddPage = Me.Factory.CreateRibbonButton
-        Me.BtnModPage = Me.Factory.CreateRibbonButton
         Me.Group2 = Me.Factory.CreateRibbonGroup
-        Me.BtnAddPhoto = Me.Factory.CreateRibbonButton
-        Me.BtnAddAllPhoto = Me.Factory.CreateRibbonButton
-        Me.BtnAddBlank = Me.Factory.CreateRibbonButton
-        Me.BtnResize = Me.Factory.CreateRibbonButton
         Me.Group3 = Me.Factory.CreateRibbonGroup
-        Me.BtnPhotoUp = Me.Factory.CreateRibbonButton
-        Me.BtnPhotoDown = Me.Factory.CreateRibbonButton
         Me.Group4 = Me.Factory.CreateRibbonGroup
         Me.ChkReSize = Me.Factory.CreateRibbonCheckBox
         Me.Group5 = Me.Factory.CreateRibbonGroup
         Me.LbVersion = Me.Factory.CreateRibbonLabel
+        Me.Group6 = Me.Factory.CreateRibbonGroup
+        Me.ChkDate = Me.Factory.CreateRibbonCheckBox
+        Me.BtnAddNew = Me.Factory.CreateRibbonButton
+        Me.BtnAddPage = Me.Factory.CreateRibbonButton
+        Me.BtnModPage = Me.Factory.CreateRibbonButton
+        Me.BtnAddPhoto = Me.Factory.CreateRibbonButton
+        Me.BtnAddAllPhoto = Me.Factory.CreateRibbonButton
+        Me.BtnAddBlank = Me.Factory.CreateRibbonButton
+        Me.BtnResize = Me.Factory.CreateRibbonButton
+        Me.BtnPhotoUp = Me.Factory.CreateRibbonButton
+        Me.BtnPhotoDown = Me.Factory.CreateRibbonButton
+        Me.Button1 = Me.Factory.CreateRibbonButton
+        Me.Button2 = Me.Factory.CreateRibbonButton
         Me.Tab1.SuspendLayout()
         Me.Group1.SuspendLayout()
         Me.Group2.SuspendLayout()
         Me.Group3.SuspendLayout()
         Me.Group4.SuspendLayout()
         Me.Group5.SuspendLayout()
+        Me.Group6.SuspendLayout()
         Me.SuspendLayout()
         '
         'Tab1
@@ -72,6 +77,7 @@
         Me.Tab1.Groups.Add(Me.Group2)
         Me.Tab1.Groups.Add(Me.Group3)
         Me.Tab1.Groups.Add(Me.Group4)
+        Me.Tab1.Groups.Add(Me.Group6)
         Me.Tab1.Groups.Add(Me.Group5)
         Me.Tab1.Label = "フォトエクセル"
         Me.Tab1.Name = "Tab1"
@@ -83,6 +89,57 @@
         Me.Group1.Items.Add(Me.BtnModPage)
         Me.Group1.Label = "ページ"
         Me.Group1.Name = "Group1"
+        '
+        'Group2
+        '
+        Me.Group2.Items.Add(Me.BtnAddPhoto)
+        Me.Group2.Items.Add(Me.BtnAddAllPhoto)
+        Me.Group2.Items.Add(Me.BtnAddBlank)
+        Me.Group2.Items.Add(Me.BtnResize)
+        Me.Group2.Label = "写真"
+        Me.Group2.Name = "Group2"
+        '
+        'Group3
+        '
+        Me.Group3.Items.Add(Me.BtnPhotoUp)
+        Me.Group3.Items.Add(Me.BtnPhotoDown)
+        Me.Group3.Label = "移動"
+        Me.Group3.Name = "Group3"
+        '
+        'Group4
+        '
+        Me.Group4.Items.Add(Me.ChkReSize)
+        Me.Group4.Label = "縮小"
+        Me.Group4.Name = "Group4"
+        '
+        'ChkReSize
+        '
+        Me.ChkReSize.Label = "縮小して取込"
+        Me.ChkReSize.Name = "ChkReSize"
+        '
+        'Group5
+        '
+        Me.Group5.Items.Add(Me.LbVersion)
+        Me.Group5.Label = "バージョン"
+        Me.Group5.Name = "Group5"
+        '
+        'LbVersion
+        '
+        Me.LbVersion.Label = "Label1"
+        Me.LbVersion.Name = "LbVersion"
+        '
+        'Group6
+        '
+        Me.Group6.Items.Add(Me.ChkDate)
+        Me.Group6.Items.Add(Me.Button1)
+        Me.Group6.Items.Add(Me.Button2)
+        Me.Group6.Label = "日付"
+        Me.Group6.Name = "Group6"
+        '
+        'ChkDate
+        '
+        Me.ChkDate.Label = "取込時追加"
+        Me.ChkDate.Name = "ChkDate"
         '
         'BtnAddNew
         '
@@ -107,15 +164,6 @@
         Me.BtnModPage.Name = "BtnModPage"
         Me.BtnModPage.OfficeImageId = "ClickToRunUpdateOptions"
         Me.BtnModPage.ShowImage = True
-        '
-        'Group2
-        '
-        Me.Group2.Items.Add(Me.btnAddPhoto)
-        Me.Group2.Items.Add(Me.btnAddAllPhoto)
-        Me.Group2.Items.Add(Me.btnAddBlank)
-        Me.Group2.Items.Add(Me.btnResize)
-        Me.Group2.Label = "写真"
-        Me.Group2.Name = "Group2"
         '
         'BtnAddPhoto
         '
@@ -149,13 +197,6 @@
         Me.BtnResize.OfficeImageId = "ControlLogo"
         Me.BtnResize.ShowImage = True
         '
-        'Group3
-        '
-        Me.Group3.Items.Add(Me.btnPhotoUp)
-        Me.Group3.Items.Add(Me.btnPhotoDown)
-        Me.Group3.Label = "移動"
-        Me.Group3.Name = "Group3"
-        '
         'BtnPhotoUp
         '
         Me.BtnPhotoUp.Label = "一段上げる"
@@ -170,27 +211,15 @@
         Me.BtnPhotoDown.OfficeImageId = "OutlineMoveDown"
         Me.BtnPhotoDown.ShowImage = True
         '
-        'Group4
+        'Button1
         '
-        Me.Group4.Items.Add(Me.ChkReSize)
-        Me.Group4.Label = "縮小"
-        Me.Group4.Name = "Group4"
+        Me.Button1.Label = "日付追加"
+        Me.Button1.Name = "Button1"
         '
-        'ChkReSize
+        'Button2
         '
-        Me.ChkReSize.Label = "縮小して取込"
-        Me.ChkReSize.Name = "ChkReSize"
-        '
-        'Group5
-        '
-        Me.Group5.Items.Add(Me.LbVersion)
-        Me.Group5.Label = "バージョン"
-        Me.Group5.Name = "Group5"
-        '
-        'LbVersion
-        '
-        Me.LbVersion.Label = "Label1"
-        Me.LbVersion.Name = "LbVersion"
+        Me.Button2.Label = "日付削除"
+        Me.Button2.Name = "Button2"
         '
         'RibbonPhotoExcel
         '
@@ -209,6 +238,8 @@
         Me.Group4.PerformLayout()
         Me.Group5.ResumeLayout(False)
         Me.Group5.PerformLayout()
+        Me.Group6.ResumeLayout(False)
+        Me.Group6.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -230,6 +261,10 @@
     Friend WithEvents ChkReSize As Microsoft.Office.Tools.Ribbon.RibbonCheckBox
     Friend WithEvents Group5 As Microsoft.Office.Tools.Ribbon.RibbonGroup
     Friend WithEvents LbVersion As Microsoft.Office.Tools.Ribbon.RibbonLabel
+    Friend WithEvents Button1 As Microsoft.Office.Tools.Ribbon.RibbonButton
+    Friend WithEvents Button2 As Microsoft.Office.Tools.Ribbon.RibbonButton
+    Friend WithEvents Group6 As Microsoft.Office.Tools.Ribbon.RibbonGroup
+    Friend WithEvents ChkDate As Microsoft.Office.Tools.Ribbon.RibbonCheckBox
 End Class
 
 Partial Class ThisRibbonCollection

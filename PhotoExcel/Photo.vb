@@ -6,6 +6,7 @@
     Public Const ImageQuality As Long = 90
 
     Public ReSize As Boolean = False
+    Public AddDate As Boolean = False
     Public Application As Excel.Application = Globals.ThisAddIn.Application
     Public ActiveSheet As Excel.Worksheet = Application.ActiveSheet
     Private OpenDirectory As String = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures)
@@ -137,6 +138,11 @@
                 End If
                 .Top = Globals.ThisAddIn.Application.ActiveSheet.Cells(Row, 1).Top
                 .Left = 0
+
+                If AddDate Then
+                    Dim tname As String = PutDate(.Top, GetExifDate(FileName))
+                    ActiveSheet.Shapes.Range({tname, .Name}).Group()
+                End If
             End With
 
             Row += 14
@@ -148,6 +154,22 @@
             Kill(CopyFile)
         Next
     End Sub
+
+    Private Function GetExifDate(fn As String) As Date
+        Dim bmp As New Bitmap(fn)
+        Dim item As PropertyItem
+        Dim dt As Date = File.GetCreationTime(fn)
+        For Each item In bmp.PropertyItems
+            If item.Id = &H9003 And item.Type = 2 Then
+                Dim val As String = Encoding.ASCII.GetString(item.Value).Trim(New Char() {ControlChars.NullChar})
+                dt = DateTime.ParseExact(val, "yyyy:MM:dd HH:mm:ss", Nothing)
+                Exit For
+            End If
+        Next item
+        bmp.Dispose()
+
+        Return dt
+    End Function
 
     Public Sub PhotoResize()
         Try

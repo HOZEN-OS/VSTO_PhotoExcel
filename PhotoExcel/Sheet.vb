@@ -299,4 +299,56 @@
             .FitToPagesTall = False
         End With
     End Sub
+
+    Public Sub PicAddDate()
+        Application.ScreenUpdating = False
+
+        Pages = PageNum()
+        For I As Integer = ActiveSheet.Shapes.Count - 1 To 0 Step -1
+            If ActiveSheet.Shapes(I).Type = Microsoft.Office.Core.MsoShapeType.msoPicture Then
+                Dim tname As String = PutDate(ActiveSheet.Shapes(I).Top, Date.Now)
+                ActiveSheet.Shapes.Range({tname, ActiveSheet.Shapes(I).Name}).Group()
+            End If
+        Next
+
+        Application.ScreenUpdating = True
+    End Sub
+
+    Public Function PutDate(top As Single, dt As Date, Optional format As String = "yyyy.MM.dd") As String
+        Dim name As String = ""
+        With ActiveSheet.Shapes.AddTextbox(Microsoft.Office.Core.MsoTextOrientation.msoTextOrientationHorizontal, 260, top + 226, 20, 6)
+            .Fill.Visible = False
+            .Line.Visible = False
+            .TextFrame2.MarginLeft = 0
+            .TextFrame2.MarginRight = 0
+            .TextFrame2.MarginTop = 0
+            .TextFrame2.MarginBottom = 0
+            .TextFrame2.WordWrap = False
+            .TextFrame.AutoSize = True
+            .TextFrame.Characters.Text = dt.ToString(format, Globalization.CultureInfo.CurrentCulture())
+            .TextFrame.Characters.Font.Color = Color.Orange
+            .TextFrame2.TextRange.Font.Name = "MS UI Gothic"
+            .TextFrame2.TextRange.Font.Bold = True
+            .TextFrame2.TextRange.Font.Size = 13
+            name = .Name
+        End With
+        Return name
+    End Function
+
+    Public Sub PicDelDate()
+        Application.ScreenUpdating = False
+
+        Pages = PageNum()
+        For I As Integer = ActiveSheet.Shapes.Count - 1 To 0 Step -1
+            If ActiveSheet.Shapes(I).Type = Microsoft.Office.Core.MsoShapeType.msoGroup Then
+                For Each ass As Excel.Shape In ActiveSheet.Shapes(I).Ungroup()
+                    If ass.Type = Microsoft.Office.Core.MsoShapeType.msoTextBox Then
+                        ass.Delete()
+                    End If
+                Next
+            End If
+        Next
+
+        Application.ScreenUpdating = True
+    End Sub
 End Module
