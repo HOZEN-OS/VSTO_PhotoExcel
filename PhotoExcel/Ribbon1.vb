@@ -1,15 +1,15 @@
 ﻿Imports Microsoft.Office.Tools.Ribbon
 
 Public Class RibbonPhotoExcel
-    Private Sub BtnAddNew_Click(sender As Object, e As RibbonControlEventArgs) Handles btnAddNew.Click
+    Private Sub BtnAddNew_Click(sender As Object, e As RibbonControlEventArgs) Handles BtnAddNew.Click
         PageNew()
     End Sub
 
-    Private Sub btnAddPage_Click(sender As Object, e As RibbonControlEventArgs) Handles btnAddPage.Click
+    Private Sub BtnAddPage_Click(sender As Object, e As RibbonControlEventArgs) Handles BtnAddPage.Click
         PageAdd()
     End Sub
 
-    Private Sub btnAddPhoto_Click(sender As Object, e As RibbonControlEventArgs) Handles btnAddPhoto.Click
+    Private Sub BtnAddPhoto_Click(sender As Object, e As RibbonControlEventArgs) Handles BtnAddPhoto.Click
         PutPhotos(GetFiles())
     End Sub
 
@@ -17,27 +17,27 @@ Public Class RibbonPhotoExcel
         ReSize = ChkReSize.Checked
     End Sub
 
-    Private Sub btnAddAllPhoto_Click(sender As Object, e As RibbonControlEventArgs) Handles btnAddAllPhoto.Click
+    Private Sub BtnAddAllPhoto_Click(sender As Object, e As RibbonControlEventArgs) Handles BtnAddAllPhoto.Click
         PutPhotos(GetFolder())
     End Sub
 
-    Private Sub btnAddBlank_Click(sender As Object, e As RibbonControlEventArgs) Handles btnAddBlank.Click
+    Private Sub BtnAddBlank_Click(sender As Object, e As RibbonControlEventArgs) Handles BtnAddBlank.Click
         BlankAdd()
     End Sub
 
-    Private Sub btnResize_Click(sender As Object, e As RibbonControlEventArgs) Handles btnResize.Click
+    Private Sub BtnResize_Click(sender As Object, e As RibbonControlEventArgs) Handles BtnResize.Click
         PhotoResize()
     End Sub
 
-    Private Sub btnModPage_Click(sender As Object, e As RibbonControlEventArgs) Handles btnModPage.Click
+    Private Sub BtnModPage_Click(sender As Object, e As RibbonControlEventArgs) Handles BtnModPage.Click
         PageModify()
     End Sub
 
-    Private Sub btnPhotoUp_Click(sender As Object, e As RibbonControlEventArgs) Handles btnPhotoUp.Click
+    Private Sub BtnPhotoUp_Click(sender As Object, e As RibbonControlEventArgs) Handles BtnPhotoUp.Click
         PhotoUp()
     End Sub
 
-    Private Sub btnPhotoDown_Click(sender As Object, e As RibbonControlEventArgs) Handles btnPhotoDown.Click
+    Private Sub BtnPhotoDown_Click(sender As Object, e As RibbonControlEventArgs) Handles BtnPhotoDown.Click
         PhotoDown()
     End Sub
 

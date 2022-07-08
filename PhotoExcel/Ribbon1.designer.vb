@@ -43,17 +43,17 @@
     Private Sub InitializeComponent()
         Me.Tab1 = Me.Factory.CreateRibbonTab
         Me.Group1 = Me.Factory.CreateRibbonGroup
-        Me.btnAddNew = Me.Factory.CreateRibbonButton
-        Me.btnAddPage = Me.Factory.CreateRibbonButton
-        Me.btnModPage = Me.Factory.CreateRibbonButton
+        Me.BtnAddNew = Me.Factory.CreateRibbonButton
+        Me.BtnAddPage = Me.Factory.CreateRibbonButton
+        Me.BtnModPage = Me.Factory.CreateRibbonButton
         Me.Group2 = Me.Factory.CreateRibbonGroup
-        Me.btnAddPhoto = Me.Factory.CreateRibbonButton
-        Me.btnAddAllPhoto = Me.Factory.CreateRibbonButton
-        Me.btnAddBlank = Me.Factory.CreateRibbonButton
-        Me.btnResize = Me.Factory.CreateRibbonButton
+        Me.BtnAddPhoto = Me.Factory.CreateRibbonButton
+        Me.BtnAddAllPhoto = Me.Factory.CreateRibbonButton
+        Me.BtnAddBlank = Me.Factory.CreateRibbonButton
+        Me.BtnResize = Me.Factory.CreateRibbonButton
         Me.Group3 = Me.Factory.CreateRibbonGroup
-        Me.btnPhotoUp = Me.Factory.CreateRibbonButton
-        Me.btnPhotoDown = Me.Factory.CreateRibbonButton
+        Me.BtnPhotoUp = Me.Factory.CreateRibbonButton
+        Me.BtnPhotoDown = Me.Factory.CreateRibbonButton
         Me.Group4 = Me.Factory.CreateRibbonGroup
         Me.ChkReSize = Me.Factory.CreateRibbonCheckBox
         Me.Group5 = Me.Factory.CreateRibbonGroup
@@ -78,35 +78,35 @@
         '
         'Group1
         '
-        Me.Group1.Items.Add(Me.btnAddNew)
-        Me.Group1.Items.Add(Me.btnAddPage)
-        Me.Group1.Items.Add(Me.btnModPage)
+        Me.Group1.Items.Add(Me.BtnAddNew)
+        Me.Group1.Items.Add(Me.BtnAddPage)
+        Me.Group1.Items.Add(Me.BtnModPage)
         Me.Group1.Label = "ページ"
         Me.Group1.Name = "Group1"
         '
-        'btnAddNew
+        'BtnAddNew
         '
-        Me.btnAddNew.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge
-        Me.btnAddNew.Label = "新規作成"
-        Me.btnAddNew.Name = "btnAddNew"
-        Me.btnAddNew.OfficeImageId = "CreateReportBlankReport"
-        Me.btnAddNew.ShowImage = True
+        Me.BtnAddNew.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge
+        Me.BtnAddNew.Label = "新規作成"
+        Me.BtnAddNew.Name = "BtnAddNew"
+        Me.BtnAddNew.OfficeImageId = "CreateReportBlankReport"
+        Me.BtnAddNew.ShowImage = True
         '
-        'btnAddPage
+        'BtnAddPage
         '
-        Me.btnAddPage.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge
-        Me.btnAddPage.Label = "ページ追加"
-        Me.btnAddPage.Name = "btnAddPage"
-        Me.btnAddPage.OfficeImageId = "SourceControlAddObjects"
-        Me.btnAddPage.ShowImage = True
+        Me.BtnAddPage.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge
+        Me.BtnAddPage.Label = "ページ追加"
+        Me.BtnAddPage.Name = "BtnAddPage"
+        Me.BtnAddPage.OfficeImageId = "SourceControlAddObjects"
+        Me.BtnAddPage.ShowImage = True
         '
-        'btnModPage
+        'BtnModPage
         '
-        Me.btnModPage.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge
-        Me.btnModPage.Label = "ページ修正"
-        Me.btnModPage.Name = "btnModPage"
-        Me.btnModPage.OfficeImageId = "ClickToRunUpdateOptions"
-        Me.btnModPage.ShowImage = True
+        Me.BtnModPage.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge
+        Me.BtnModPage.Label = "ページ修正"
+        Me.BtnModPage.Name = "BtnModPage"
+        Me.BtnModPage.OfficeImageId = "ClickToRunUpdateOptions"
+        Me.BtnModPage.ShowImage = True
         '
         'Group2
         '
@@ -117,37 +117,37 @@
         Me.Group2.Label = "写真"
         Me.Group2.Name = "Group2"
         '
-        'btnAddPhoto
+        'BtnAddPhoto
         '
-        Me.btnAddPhoto.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge
-        Me.btnAddPhoto.Label = "写真追加"
-        Me.btnAddPhoto.Name = "btnAddPhoto"
-        Me.btnAddPhoto.OfficeImageId = "PictureReflectionGalleryItem"
-        Me.btnAddPhoto.ShowImage = True
+        Me.BtnAddPhoto.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge
+        Me.BtnAddPhoto.Label = "写真追加"
+        Me.BtnAddPhoto.Name = "BtnAddPhoto"
+        Me.BtnAddPhoto.OfficeImageId = "PictureReflectionGalleryItem"
+        Me.BtnAddPhoto.ShowImage = True
         '
-        'btnAddAllPhoto
+        'BtnAddAllPhoto
         '
-        Me.btnAddAllPhoto.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge
-        Me.btnAddAllPhoto.Label = "フォルダ読込"
-        Me.btnAddAllPhoto.Name = "btnAddAllPhoto"
-        Me.btnAddAllPhoto.OfficeImageId = "FileOpen"
-        Me.btnAddAllPhoto.ShowImage = True
+        Me.BtnAddAllPhoto.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge
+        Me.BtnAddAllPhoto.Label = "フォルダ読込"
+        Me.BtnAddAllPhoto.Name = "BtnAddAllPhoto"
+        Me.BtnAddAllPhoto.OfficeImageId = "FileOpen"
+        Me.BtnAddAllPhoto.ShowImage = True
         '
-        'btnAddBlank
+        'BtnAddBlank
         '
-        Me.btnAddBlank.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge
-        Me.btnAddBlank.Label = "空白追加"
-        Me.btnAddBlank.Name = "btnAddBlank"
-        Me.btnAddBlank.OfficeImageId = "BevelShapeGallery"
-        Me.btnAddBlank.ShowImage = True
+        Me.BtnAddBlank.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge
+        Me.BtnAddBlank.Label = "空白追加"
+        Me.BtnAddBlank.Name = "BtnAddBlank"
+        Me.BtnAddBlank.OfficeImageId = "BevelShapeGallery"
+        Me.BtnAddBlank.ShowImage = True
         '
-        'btnResize
+        'BtnResize
         '
-        Me.btnResize.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge
-        Me.btnResize.Label = "リサイズ"
-        Me.btnResize.Name = "btnResize"
-        Me.btnResize.OfficeImageId = "ControlLogo"
-        Me.btnResize.ShowImage = True
+        Me.BtnResize.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge
+        Me.BtnResize.Label = "リサイズ"
+        Me.BtnResize.Name = "BtnResize"
+        Me.BtnResize.OfficeImageId = "ControlLogo"
+        Me.BtnResize.ShowImage = True
         '
         'Group3
         '
@@ -156,19 +156,19 @@
         Me.Group3.Label = "移動"
         Me.Group3.Name = "Group3"
         '
-        'btnPhotoUp
+        'BtnPhotoUp
         '
-        Me.btnPhotoUp.Label = "一段上げる"
-        Me.btnPhotoUp.Name = "btnPhotoUp"
-        Me.btnPhotoUp.OfficeImageId = "OutlineMoveUp"
-        Me.btnPhotoUp.ShowImage = True
+        Me.BtnPhotoUp.Label = "一段上げる"
+        Me.BtnPhotoUp.Name = "BtnPhotoUp"
+        Me.BtnPhotoUp.OfficeImageId = "OutlineMoveUp"
+        Me.BtnPhotoUp.ShowImage = True
         '
-        'btnPhotoDown
+        'BtnPhotoDown
         '
-        Me.btnPhotoDown.Label = "一段下げる"
-        Me.btnPhotoDown.Name = "btnPhotoDown"
-        Me.btnPhotoDown.OfficeImageId = "OutlineMoveDown"
-        Me.btnPhotoDown.ShowImage = True
+        Me.BtnPhotoDown.Label = "一段下げる"
+        Me.BtnPhotoDown.Name = "BtnPhotoDown"
+        Me.BtnPhotoDown.OfficeImageId = "OutlineMoveDown"
+        Me.BtnPhotoDown.ShowImage = True
         '
         'Group4
         '
@@ -215,17 +215,17 @@
 
     Friend WithEvents Tab1 As Microsoft.Office.Tools.Ribbon.RibbonTab
     Friend WithEvents Group1 As Microsoft.Office.Tools.Ribbon.RibbonGroup
-    Friend WithEvents btnAddNew As Microsoft.Office.Tools.Ribbon.RibbonButton
-    Friend WithEvents btnAddPage As Microsoft.Office.Tools.Ribbon.RibbonButton
-    Friend WithEvents btnModPage As Microsoft.Office.Tools.Ribbon.RibbonButton
+    Friend WithEvents BtnAddNew As Microsoft.Office.Tools.Ribbon.RibbonButton
+    Friend WithEvents BtnAddPage As Microsoft.Office.Tools.Ribbon.RibbonButton
+    Friend WithEvents BtnModPage As Microsoft.Office.Tools.Ribbon.RibbonButton
     Friend WithEvents Group2 As Microsoft.Office.Tools.Ribbon.RibbonGroup
-    Friend WithEvents btnAddPhoto As Microsoft.Office.Tools.Ribbon.RibbonButton
-    Friend WithEvents btnAddAllPhoto As Microsoft.Office.Tools.Ribbon.RibbonButton
-    Friend WithEvents btnAddBlank As Microsoft.Office.Tools.Ribbon.RibbonButton
-    Friend WithEvents btnResize As Microsoft.Office.Tools.Ribbon.RibbonButton
+    Friend WithEvents BtnAddPhoto As Microsoft.Office.Tools.Ribbon.RibbonButton
+    Friend WithEvents BtnAddAllPhoto As Microsoft.Office.Tools.Ribbon.RibbonButton
+    Friend WithEvents BtnAddBlank As Microsoft.Office.Tools.Ribbon.RibbonButton
+    Friend WithEvents BtnResize As Microsoft.Office.Tools.Ribbon.RibbonButton
     Friend WithEvents Group3 As Microsoft.Office.Tools.Ribbon.RibbonGroup
-    Friend WithEvents btnPhotoUp As Microsoft.Office.Tools.Ribbon.RibbonButton
-    Friend WithEvents btnPhotoDown As Microsoft.Office.Tools.Ribbon.RibbonButton
+    Friend WithEvents BtnPhotoUp As Microsoft.Office.Tools.Ribbon.RibbonButton
+    Friend WithEvents BtnPhotoDown As Microsoft.Office.Tools.Ribbon.RibbonButton
     Friend WithEvents Group4 As Microsoft.Office.Tools.Ribbon.RibbonGroup
     Friend WithEvents ChkReSize As Microsoft.Office.Tools.Ribbon.RibbonCheckBox
     Friend WithEvents Group5 As Microsoft.Office.Tools.Ribbon.RibbonGroup
