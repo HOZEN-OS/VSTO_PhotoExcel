@@ -139,10 +139,10 @@
                 .Left = 0
             End With
 
-            Row = Row + 14
+            Row += 14
             If C = 3 Then
                 C = 0
-                Row = Row + 1
+                Row += 1
             End If
 
             Kill(CopyFile)
