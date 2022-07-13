@@ -316,7 +316,7 @@
 
     Public Function PutDate(top As Single, dt As Date, Optional format As String = "yyyy.MM.dd") As String
         Dim name As String = ""
-        With ActiveSheet.Shapes.AddTextbox(Microsoft.Office.Core.MsoTextOrientation.msoTextOrientationHorizontal, 260, top + 226, 20, 6)
+        With ActiveSheet.Shapes.AddTextbox(Microsoft.Office.Core.MsoTextOrientation.msoTextOrientationHorizontal, 276, top + 228, 20, 6)
             .Fill.Visible = False
             .Line.Visible = False
             .TextFrame2.MarginLeft = 0
@@ -329,7 +329,7 @@
             .TextFrame.Characters.Font.Color = Color.Orange
             .TextFrame2.TextRange.Font.Name = "MS UI Gothic"
             .TextFrame2.TextRange.Font.Bold = True
-            .TextFrame2.TextRange.Font.Size = 13
+            .TextFrame2.TextRange.Font.Size = 11
             name = .Name
         End With
         Return name
